@@ -10,15 +10,11 @@
 		<table>
 			<tr>
 				<td width="100">ID:</td>
-				<td><input type="text" id="id" ng-model="user.id placeholder="enter your id" /></td>
+				<td><input type="text" id="id" ng-model="user.id"/></td>
 			</tr>
 			<tr>
 				<td width="100">Name:</td>
-				<td><input type="text" id="name" ng-model="user.name placeholder="enter your name"></td>
-			</tr>
-			<tr>
-				<td width="100">Email:</td>
-				<td><input type="text" id="email" ng-model="user.email placeholder="enter your name"></td>
+				<td><input type="text" id="name" ng-model="user.name"/></td>
 			</tr>
 		</table>
 
@@ -39,7 +35,7 @@
 		<br />
 		<br />
 		<br />
-		<div ng-repeat="usr in users">{{usr.name}} {{usr.email}}</div>
+		<div ng-repeat="usr in users">{{usr.name}}</div>
 	</div>
 </body>
 <script type="text/javascript"
