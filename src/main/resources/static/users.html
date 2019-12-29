@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>User CRUD</title>
 </head>
 <body>
-<h1>Hello World</h1>
+	<div ng-controller="UserCRUDCtrl">
+		<h1>Hello World</h1>
+		<table>
+			<tr>
+				<td width="100">ID:</td>
+				<td><input type="text" id="id" ng-model="user.id placeholder="enter your id" /></td>
+			</tr>
+			<tr>
+				<td width="100">Name:</td>
+				<td><input type="text" id="name" ng-model="user.name placeholder="enter your name"></td>
+			</tr>
+			<tr>
+				<td width="100">Email:</td>
+				<td><input type="text" id="email" ng-model="user.email placeholder="enter your name"></td>
+			</tr>
+		</table>
+
+		<br />
+		<br />
+		<a ng-click="getUser(user.id)">Get User</a>
+		<a ng-click="updateUser(user.id,user.name,user.email)">Update User</a>
+		<a ng-click="addUser(user.name,user.email)">Add User</a>
+		<a ng-click="deleteUser(user.id)">Delete User</a>
+		<br />
+		<br />
+		<p style="color: green;">{{message}}</p>
+		<p style="color: red;">{{errorMessage}}</p>
+
+		<br />
+		<br /> 
+		<a ng-click="getAllUsers()">Get All Users</a>
+		<br />
+		<br />
+		<br />
+		<div ng-repeat="usr in users">{{usr.name}} {{usr.email}}</div>
+	</div>
 </body>
+<script type="text/javascript"
+	src="webjars/angularjs/1.7.8/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<link rel="stylesheet" href="css/app.css">
 </html>
